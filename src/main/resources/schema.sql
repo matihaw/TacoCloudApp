@@ -23,11 +23,11 @@ ALTER TABLE Taco_Ingredients
 
 CREATE TABLE IF NOT EXISTS Taco_Order(
     id IDENTITY,
-    deliveryName VARCHAR(50) NOT NULL,
-    deliveryStreet VARCHAR(50) NOT NULL,
-    deliveryCity VARCHAR(50) NOT NULL,
-    deliveryState VARCHAR(20) NOT NULL,
-    deliveryZip VARCHAR(10) NOT NULL,
+    Name VARCHAR(50) NOT NULL,
+    Street VARCHAR(50) NOT NULL,
+    City VARCHAR(50) NOT NULL,
+    State VARCHAR(20) NOT NULL,
+    Zip VARCHAR(10) NOT NULL,
     ccNumber VARCHAR(16) NOT NULL,
     ccExpiration VARCHAR(5) NOT NULL,
     ccCVV VARCHAR(3) NOT NULL,

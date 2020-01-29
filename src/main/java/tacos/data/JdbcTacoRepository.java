@@ -31,7 +31,7 @@ public class JdbcTacoRepository implements TacoRepository{
 	public Taco save(Taco taco) {
 		long tacoId = saveTacoInfo(taco);
 		taco.setId(tacoId);
-		for (Ingredient ingredient : taco.getIngredients()) {
+		for (String ingredient : taco.getIngredients()) {
 			saveIngredientToTaco(ingredient, tacoId);
 		}
 		return taco;
@@ -47,16 +47,17 @@ public class JdbcTacoRepository implements TacoRepository{
 										taco.getName(), new Timestamp(taco.getCreatedAt().getTime())));
 		
 		 KeyHolder keyHolder = new GeneratedKeyHolder();
+		 System.out.println(keyHolder.toString());
 		 jdbc.update(psc, keyHolder);
 		 
 		 return keyHolder.getKey().longValue();
 
 		}
 	private void saveIngredientToTaco(
-			Ingredient ingredient, long tacoId) {
+			String ingredient, long tacoId) {
 		jdbc.update(
 				"INSERT INTO Taco_Ingredients (taco, ingredient) "
-				+ "Values (?,?)",tacoId, ingredient.getId());
+				+ "Values (?,?)",tacoId, ingredient);
 		
 	}
 

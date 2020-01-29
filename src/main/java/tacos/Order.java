@@ -16,6 +16,7 @@ import lombok.Data;
 public class Order {
 	
 	private Long id;
+	
 	private Date placedAt;
 	
 	@NotBlank(message = "To pole jest wymagane!")
@@ -42,9 +43,9 @@ public class Order {
 	
 	@Digits(integer = 3,fraction = 0,message = "Nieprawidłowy kod CVV")
 	private String ccCVV;
-
+	
 	private List<Taco> tacos = new ArrayList<>();
-
+	
 	public void addDesign(Taco design) {
 	    this.tacos.add(design);
 	  }

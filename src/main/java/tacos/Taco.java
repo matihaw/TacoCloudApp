@@ -19,5 +19,5 @@ public class Taco {
 	private String name;
 	
 	@Size(min = 1, message = "Musisz wybrać przynajmniej jeden skłądnik.")
-	private List<Ingredient> ingredients;
+	private List<String> ingredients;
 }
