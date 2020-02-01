@@ -49,6 +49,7 @@ public class DesigneController {
  		}
  	
  	
+ 	
 		@GetMapping
 		public String showDesignForm(Model model) {
 			List<Ingredient> ingredients = new ArrayList<>();
@@ -79,10 +80,10 @@ public class DesigneController {
  			@Valid Taco design,
  			Errors errors,
  			@ModelAttribute Order order) {
- 		/*if(errors.hasErrors()) {
+ 		if(errors.hasErrors()) {
  			return "design";
  			
- 		}*/
+ 		}
  		Taco saved = designRepo.save(design);
  		order.addDesign(saved);
  		
