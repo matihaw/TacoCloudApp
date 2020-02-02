@@ -81,7 +81,7 @@ public class DesigneController {
  			Errors errors,
  			@ModelAttribute Order order) {
  		if(errors.hasErrors()) {
- 			return "design";
+ 			return "redirect:/";
  			
  		}
  		Taco saved = designRepo.save(design);
